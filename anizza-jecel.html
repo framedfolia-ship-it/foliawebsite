@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anizza & Jecel | FOLIA</title>
+<meta name="description" content="Explore the Anizza and Jecel wedding photography collection from Calayan Island.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#19350c">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">FOLIA</a>
+  <button class="menu-btn" type="button" onclick="toggleMenu()" aria-label="Open navigation" aria-expanded="false" aria-controls="navLinks">☰</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="collections.html">Collections</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</nav>
+
+
+<header class="page-header">
+  <div class="label">PHOTOGRAPHIC OBJECT / WEDDING STORY</div>
+  <h1>Anizza & Jecel</h1>
+  <p>Calayan Island</p>
+</header>
+<section class="story-details">
+  <div>
+    <div class="label">Object Details</div>
+    <h2 class="detail-title">Anizza & Jecel</h2>
+    <p class="detail-copy">A collection from Anizza and Jecel’s wedding story, captured through intimate moments and the atmosphere of Calayan Island.</p>
+    <p class="detail-copy"><strong>Location:</strong> Calayan Island<br><strong>Format:</strong> Photographic collection<br><strong>Contents:</strong> 3 selected photographs</p>
+    <a class="back-link" href="collections.html">← Back to Collections</a>
+  </div>
+  <div class="detail-box">
+    <div class="label">About this object</div>
+    <p class="detail-copy">This collection is presented as an individual FOLIA object. Every image belongs to the same visual story and can be opened for a larger view.</p>
+  </div>
+</section>
+<main class="page-main">
+  <div class="category-heading"><h2>The Photographs</h2><p>3 frames</p></div>
+  <div class="photo-grid"><div class="photo" onclick="openLightbox('images/B5 1.webp')"><img src="images/B5 1.webp" alt="Anizza & Jecel photograph 1" loading="eager" fetchpriority="high" decoding="async" width="1464" height="2197"></div><div class="photo" onclick="openLightbox('images/B5 2.webp')"><img src="images/B5 2.webp" alt="Anizza & Jecel photograph 2" loading="lazy" decoding="async" width="1571" height="2200"></div><div class="photo" onclick="openLightbox('images/H3.webp')"><img src="images/H3.webp" alt="Anizza & Jecel photograph 3" loading="lazy" decoding="async" width="1650" height="2200"></div></div>
+</main>
+<div class="lightbox" id="lightbox"><span class="close" onclick="closeLightbox()">×</span><img id="lightboxImage" src="" alt="Expanded photograph" loading="lazy" decoding="async"></div>
+<script>
+function openLightbox(image){document.getElementById("lightboxImage").src=image;document.getElementById("lightbox").classList.add("active");document.body.style.overflow="hidden"}
+function closeLightbox(){document.getElementById("lightbox").classList.remove("active");document.body.style.overflow=""}
+document.getElementById("lightbox").addEventListener("click",e=>{if(e.target.id==="lightbox")closeLightbox()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeLightbox()});
+</script>
+
+
+<footer>
+  <p>© 2026 FOLIA — Photography Collection</p>
+  <div class="socials">
+    <a href="https://www.instagram.com/krisalubia/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.facebook.com/profile.php?id=61570940212125" target="_blank" rel="noopener">Facebook</a>
+  </div>
+</footer>
+
+
+<script>
+function toggleMenu(){const nav=document.getElementById("navLinks"),btn=document.querySelector(".menu-btn"),open=nav.classList.toggle("active");btn.setAttribute("aria-expanded",String(open));}
+document.querySelectorAll(".nav-links a").forEach(a=>a.addEventListener("click",()=>{document.getElementById("navLinks").classList.remove("active");document.querySelector(".menu-btn").setAttribute("aria-expanded","false");}));
+</script>
+
+</body>
+</html>
